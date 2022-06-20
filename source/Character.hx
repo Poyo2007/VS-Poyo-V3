@@ -16,6 +16,10 @@ class Character extends FlxSprite
 	public var curCharacter:String = 'bf';
 
 	public var holdTimer:Float = 0;
+	
+	public var xPos:Float = 0;
+	public var yPos:Float = 0;
+	
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -25,9 +29,6 @@ class Character extends FlxSprite
 		curCharacter = character;
 		this.isPlayer = isPlayer;
 		
-		public static var xPos:Float = 0;
-		public static var yPos:Float = 0;
-	
 		antialiasing = true;
 
 		switch (curCharacter)
