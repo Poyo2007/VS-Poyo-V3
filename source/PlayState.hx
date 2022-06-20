@@ -405,8 +405,8 @@ class PlayState extends MusicBeatState
   
   			add(thecity);
   			
-  			boyfriend.x = 1000
-  			dad.x = -300
+  			boyfriend.x = 1000;
+  			dad.x = -300;
 			}
 			default:
 			{
