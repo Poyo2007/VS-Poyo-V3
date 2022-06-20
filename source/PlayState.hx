@@ -398,10 +398,8 @@ class PlayState extends MusicBeatState
 				curStage = 'cityvspoyo';
 				
 		var thecity:FlxSprite = new FlxSprite(-700, -345).loadGraphic(Paths.image('thecity'));
-  			thecity.updateHitbox();
-  			thecity.antialiasing = true;
+  		  thecity.antialiasing = true;
   			thecity.scrollFactor.set(1, 1);
-  			thecity.active = false;
   
   			add(thecity);
   			
