@@ -93,7 +93,7 @@ class Character extends FlxSprite
 
         //what anim it should play
 				playAnim('idle');
-			case 'bf-poyo':
+			case 'NEWbf':
 			 
 			  xPos += -280
 			  yPos += -40
