@@ -69,7 +69,7 @@ class Character extends FlxSprite
       	case 'poyo':
 				// tutorial no one asked for time
 				
-				yPos += 80
+				yPos += 80;
 	
 				//defining image name
 				tex = Paths.getSparrowAtlas('characters/Poyo', 'shared');
@@ -95,8 +95,8 @@ class Character extends FlxSprite
 				playAnim('idle');
 			case 'NEWbf':
 			 
-			  xPos += -280
-			  yPos += -40
+			  xPos += -280;
+			  yPos += -40;
 				// tutorial no one asked for time
 				//defining image name
 				tex = Paths.getSparrowAtlas('characters/newBf', 'shared');
