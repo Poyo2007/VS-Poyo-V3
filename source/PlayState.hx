@@ -410,6 +410,10 @@ class PlayState extends MusicBeatState
 
 				isHalloween = true;
 			}
+			case 'cityvspoyo':
+			    var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('bg', 'week7'));
+					bg.scrollFactor.set(1, 1);
+					add(bg);
 			case 'philly': 
 					{
 					curStage = 'philly';
@@ -803,47 +807,13 @@ class PlayState extends MusicBeatState
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
-		switch (SONG.player2)
-		{
-			case 'gf':
-				dad.setPosition(gf.x, gf.y);
-				gf.visible = false;
-				if (isStoryMode)
-				{
-					camPos.x += 600;
-					tweenCamIn();
-				}
-
-			case "spooky":
-				dad.y += 200;
-			case "monster":
-				dad.y += 100;
-			case 'monster-christmas':
-				dad.y += 130;
-			case 'dad':
-				camPos.x += 400;
-			case 'pico':
-				camPos.x += 600;
-				dad.y += 300;
-			case 'parents-christmas':
-				dad.x -= 500;
-			case 'senpai':
-				dad.x += 150;
-				dad.y += 360;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'senpai-angry':
-				dad.x += 150;
-				dad.y += 360;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'spirit':
-				dad.x -= 150;
-				dad.y += 100;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-		}
-
-
+		boyfriend = new Boyfriend(770, 100, SONG.player1);
 		
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		dad.x += Character.xPos;
+		dad.y += Character.yPos;
+		
+		boyfriend.x += Character.xPos;
+		boyfriend.y += Character.yPos;
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -855,7 +825,10 @@ class PlayState extends MusicBeatState
 					resetFastCar();
 					add(fastCar);
 				}
-
+				
+			case 'cityvspoyo'
+			  boyfriend.x += 1000;
+			  dad.x += -300;
 			case 'mall':
 				boyfriend.x += 200;
 

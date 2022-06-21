@@ -16,6 +16,9 @@ class Character extends FlxSprite
 	public var curCharacter:String = 'bf';
 
 	public var holdTimer:Float = 0;
+	
+	public static var xPos:Float = 0;
+	public static var yPos:Float = 0;
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -27,6 +30,7 @@ class Character extends FlxSprite
 
 		var tex:FlxAtlasFrames;
 		antialiasing = true;
+		
 
 		switch (curCharacter)
 		{
@@ -62,6 +66,62 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
+      	case 'poyo':
+				// tutorial no one asked for time
+				
+				yPos += 80
+	
+				//defining image name
+				tex = Paths.getSparrowAtlas('characters/Poyo', 'shared');
+				frames = tex;
+				//size
+				setGraphicSize(Std.int(width * 1.2));
+
+        //adds animations
+				animation.addByPrefix('idle', 'Poyo Idle', 24);
+				animation.addByPrefix('singUP', 'Poyo Up', 24);
+				animation.addByPrefix('singRIGHT', 'Poyo Right', 24);
+				animation.addByPrefix('singDOWN', 'Poyo Down', 24);
+				animation.addByPrefix('singLEFT', 'Poyo Left', 24);
+
+        //defines offsets
+				addOffset('idle', 0, -20);
+				addOffset("singUP", 13, -19);
+				addOffset("singRIGHT", -3, -18);
+				addOffset("singLEFT", -1, -22);
+				addOffset("singDOWN", 0, -20);
+
+        //what anim it should play
+				playAnim('idle');
+			case 'bf-poyo':
+			 
+			  xPos += -280
+			  yPos += -40
+				// tutorial no one asked for time
+				//defining image name
+				tex = Paths.getSparrowAtlas('characters/newBf', 'shared');
+				frames = tex;
+				//size
+				setGraphicSize(Std.int(width * 0.6));
+
+        //adds animations
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+        animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+	
+        //defines offsets
+				addOffset('idle', 0, -20);
+				addOffset("singUP", 13, -19);
+				addOffset("singRIGHT", -3, -18);
+				addOffset("singLEFT", -1, -22);
+				addOffset("singDOWN", 0, -20);
+
+        //what anim it should play
+				playAnim('idle');
+				
+				flipX = true;
 			case 'gf-christmas':
 				tex = Paths.getSparrowAtlas('characters/gfChristmas');
 				frames = tex;
