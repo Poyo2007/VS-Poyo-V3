@@ -411,9 +411,14 @@ class PlayState extends MusicBeatState
 				isHalloween = true;
 			}
 			case 'cityvspoyo':
-			    var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('bg', 'week7'));
+			    defaultCamZoom = 0.8;
+			    
+			    var bg:FlxSprite = new FlxSprite(-700, -345).loadGraphic(Paths.image('bg', 'shared'));
 					bg.scrollFactor.set(1, 1);
 					add(bg);
+					
+					boyfriend.x += 1000;
+			    dad.x += -300;
 			case 'philly': 
 					{
 					curStage = 'philly';
@@ -825,10 +830,6 @@ class PlayState extends MusicBeatState
 					resetFastCar();
 					add(fastCar);
 				}
-				
-			case 'cityvspoyo':
-			  boyfriend.x += 1000;
-			  dad.x += -300;
 			case 'mall':
 				boyfriend.x += 200;
 

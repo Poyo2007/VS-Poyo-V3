@@ -96,7 +96,7 @@ class Character extends FlxSprite
 			case 'NEWbf':
 			 
 			  xPos += -280;
-			  yPos += -40;
+			  yPos -= 80;
 				// tutorial no one asked for time
 				//defining image name
 				tex = Paths.getSparrowAtlas('characters/newBf', 'shared');
@@ -574,7 +574,7 @@ class Character extends FlxSprite
 			flipX = !flipX;
 
 			// Doesn't flip for BF, since his are already in the right place???
-			if (!curCharacter.startsWith('bf'))
+			if (!curCharacter.startsWith('bf') || !curCharacter.startsWith('NEW'))
 			{
 				// var animArray
 				var oldRight = animation.getByName('singRIGHT').frames;
@@ -594,7 +594,7 @@ class Character extends FlxSprite
 
 	override function update(elapsed:Float)
 	{
-		if (!curCharacter.startsWith('bf'))
+		if (!curCharacter.startsWith('bf') || !curCharacter.startsWith('NEW'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{
